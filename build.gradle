@@ -1,0 +1,19 @@
+apply plugin: 'java'
+
+repositories {
+    maven {
+        url 'https://repo.netcompany.com/artifactory/ufstdms-maven-dev-local'
+        credentials {
+            username = ""
+            password = ""
+        }
+    }
+    mavenCentral()
+}
+
+sourceCompatibility = 1.11
+
+dependencies {
+   implementation("dk.toldst.dms.integration:integration-consume-service-common:0.0.1")
+}
+
