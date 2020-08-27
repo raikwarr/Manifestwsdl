@@ -3,4 +3,5 @@
 dmsBpprPipeline {
     agentLabel = 'docker'
     buildToolName = 'Default'
+    sonarqubeServerKey = "UFSTDMS-MANIFEST"
 }
