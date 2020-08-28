@@ -20,3 +20,10 @@ apply plugin: 'dk.toldst.dms.dms-devops-plugin'
 dependencies {
     implementation("dk.toldst.dms.integration:integration-consume-service-common:0.0.1")
 }
+
+configurations {
+    [apiElements, runtimeElements].each {
+        it.outgoing.artifacts.removeIf { it.buildDependencies.getDependencies(null).contains(jar) }
+        it.outgoing.artifact(bootJar)
+    }
+}
