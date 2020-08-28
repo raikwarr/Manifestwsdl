@@ -1,0 +1,7 @@
+@Library('dms-pipeline-shared-libraries') _
+
+dmsBpprPipeline {
+    agentLabel = 'docker'
+    buildToolName = 'Default'
+    sonarqubeServerKey = "UFSTDMS-MANIFEST"
+}
