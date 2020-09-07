@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0"
+	xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+	xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	<xs:annotation>
+		<xs:documentation/>
+		<xs:documentation>r5905</xs:documentation>
+	</xs:annotation>
+	<xs:include schemaLocation="ToldDeklarationSoegeindikator.xsd"/>
+	<xs:include schemaLocation="DMSToldDeklaration.xsd"/>
+	<xs:include schemaLocation="Transportmiddel.xsd"/>
+	<xs:include schemaLocation="TransportDokument.xsd"/>
+	<xs:include schemaLocation="Transportdeklaration.xsd"/>
+	<xs:include schemaLocation="ToldBehandlingDokument.xsd"/>
+	<xs:include schemaLocation="Container.xsd"/>
+	<xs:include schemaLocation="FunktionelFejl.xsd"/>
+	<xs:element name="IEI79AImportDeklarationSøgSvar" type="fase2.1:IEI79AImportDeklarationSøgSvarType"/>
+	<xs:complexType name="IEI79AImportDeklarationSøgSvarType">
+		<xs:sequence>
+			<xs:element name="IEI79A">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="TransportOperationNøgle">
+							<xs:complexType>
+								<xs:sequence>
+									<xs:element ref="fase2.1:ToldDeklarationSøgeindikator"/>
+									<!--Sequence removed-->
+									<xs:element name="RegistreretFra" minOccurs="0">
+										<xs:complexType>
+											<xs:sequence>
+												<xs:element ref="fase2.1:ToldDeklarationRegistreretDatoTid"/>
+											</xs:sequence>
+										</xs:complexType>
+									</xs:element>
+									<!--Sequence removed-->
+									<xs:element name="RegistreretTil" minOccurs="0">
+										<xs:complexType>
+											<xs:sequence>
+												<xs:element ref="fase2.1:ToldDeklarationRegistreretDatoTid"/>
+											</xs:sequence>
+										</xs:complexType>
+									</xs:element>
+									<xs:element ref="fase2.1:TransportmiddelIdentitet" minOccurs="0"/>
+									<xs:element name="TransportDokumentListe">
+										<xs:complexType>
+											<xs:sequence>
+												<xs:element name="TransportDokument" minOccurs="0" maxOccurs="9999">
+													<xs:complexType>
+														<xs:sequence>
+															<xs:element ref="fase2.1:TransportDokumentType" minOccurs="0"/>
+															<xs:element ref="fase2.1:TransportDokumentReference" minOccurs="0"/>
+															<xs:element name="ToldDeklarationListe">
+																<xs:complexType>
+																	<xs:sequence>
+																		<xs:element name="ToldDeklaration" minOccurs="0" maxOccurs="99">
+																			<xs:complexType>
+																				<xs:sequence>
+																					<xs:element ref="fase2.1:ToldDeklarationAngivelseArt"/>
+																					<xs:element ref="fase2.1:ToldDeklarationReferenceNummer"/>
+																					<xs:element ref="fase2.1:ToldDeklarationStatusKode"/>
+																					<xs:element ref="fase2.1:ToldDeklarationTotalBruttoVægt"/>
+																					<xs:element ref="fase2.1:ToldDeklarationAntalKolli"/>
+																					<xs:element ref="fase2.1:ToldDeklarationForventetAnkomstDatoTid" minOccurs="0"/>
+																					<xs:element ref="fase2.1:ToldDeklarationAnkomstDatoTid" minOccurs="0"/>
+																				</xs:sequence>
+																			</xs:complexType>
+																		</xs:element>
+																	</xs:sequence>
+																</xs:complexType>
+															</xs:element>
+														</xs:sequence>
+													</xs:complexType>
+												</xs:element>
+											</xs:sequence>
+										</xs:complexType>
+									</xs:element>
+									<xs:element name="TransportOperation">
+										<xs:complexType>
+											<xs:sequence>
+												<xs:element ref="fase2.1:TransportmiddelIdentitet" minOccurs="0"/>
+												<xs:element ref="fase2.1:TransportdeklarationRuteReferenceNummer" minOccurs="0"/>
+												<xs:element name="ToldDeklarationListe">
+													<xs:complexType>
+														<xs:sequence>
+															<xs:element name="ToldDeklaration" minOccurs="0" maxOccurs="99">
+																<xs:complexType>
+																	<xs:sequence>
+																		<xs:element ref="fase2.1:ToldDeklarationAngivelseArt"/>
+																		<xs:element ref="fase2.1:ToldDeklarationReferenceNummer"/>
+																		<xs:element ref="fase2.1:ToldDeklarationStatusKode"/>
+																		<xs:element ref="fase2.1:ToldDeklarationTotalBruttoVægt"/>
+																		<xs:element ref="fase2.1:ToldDeklarationAntalKolli"/>
+																		<xs:element ref="fase2.1:ToldDeklarationForventetAnkomstDatoTid" minOccurs="0"/>
+																		<xs:element ref="fase2.1:ToldDeklarationAnkomstDatoTid" minOccurs="0"/>
+																	</xs:sequence>
+																</xs:complexType>
+															</xs:element>
+														</xs:sequence>
+													</xs:complexType>
+												</xs:element>
+											</xs:sequence>
+										</xs:complexType>
+									</xs:element>
+									<xs:element name="ToldBehandlingDokumentListe">
+										<xs:complexType>
+											<xs:sequence>
+												<xs:element name="ToldBehandlingDokument" minOccurs="0" maxOccurs="99">
+													<xs:complexType>
+														<xs:sequence>
+															<xs:element ref="fase2.1:ToldBehandlingDokumentReference"/>
+															<xs:element name="ToldDeklarationListe">
+																<xs:complexType>
+																	<xs:sequence>
+																		<xs:element name="ToldDeklaration" minOccurs="0" maxOccurs="99">
+																			<xs:complexType>
+																				<xs:sequence>
+																					<xs:element ref="fase2.1:ToldDeklarationAngivelseArt"/>
+																					<xs:element ref="fase2.1:ToldDeklarationReferenceNummer"/>
+																					<xs:element ref="fase2.1:ToldDeklarationStatusKode"/>
+																					<xs:element ref="fase2.1:ToldDeklarationTotalBruttoVægt"/>
+																					<xs:element ref="fase2.1:ToldDeklarationAntalKolli"/>
+																					<xs:element ref="fase2.1:ToldDeklarationForventetAnkomstDatoTid" minOccurs="0"/>
+																					<xs:element ref="fase2.1:ToldDeklarationAnkomstDatoTid" minOccurs="0"/>
+																				</xs:sequence>
+																			</xs:complexType>
+																		</xs:element>
+																	</xs:sequence>
+																</xs:complexType>
+															</xs:element>
+														</xs:sequence>
+													</xs:complexType>
+												</xs:element>
+											</xs:sequence>
+										</xs:complexType>
+									</xs:element>
+									<xs:element name="ContainerListe">
+										<xs:complexType>
+											<xs:sequence>
+												<xs:element name="Container" minOccurs="0" maxOccurs="99">
+													<xs:complexType>
+														<xs:sequence>
+															<xs:element ref="fase2.1:ContainerID"/>
+															<xs:element name="ToldDeklarationListe">
+																<xs:complexType>
+																	<xs:sequence>
+																		<xs:element name="ToldDeklaration" minOccurs="0" maxOccurs="99">
+																			<xs:complexType>
+																				<xs:sequence>
+																					<xs:element ref="fase2.1:ToldDeklarationAngivelseArt"/>
+																					<xs:element ref="fase2.1:ToldDeklarationReferenceNummer"/>
+																					<xs:element ref="fase2.1:ToldDeklarationStatusKode"/>
+																					<xs:element ref="fase2.1:ToldDeklarationTotalBruttoVægt"/>
+																					<xs:element ref="fase2.1:ToldDeklarationAntalKolli"/>
+																					<xs:element ref="fase2.1:ToldDeklarationForventetAnkomstDatoTid" minOccurs="0"/>
+																					<xs:element ref="fase2.1:ToldDeklarationAnkomstDatoTid" minOccurs="0"/>
+																				</xs:sequence>
+																			</xs:complexType>
+																		</xs:element>
+																	</xs:sequence>
+																</xs:complexType>
+															</xs:element>
+														</xs:sequence>
+													</xs:complexType>
+												</xs:element>
+											</xs:sequence>
+										</xs:complexType>
+									</xs:element>
+								</xs:sequence>
+							</xs:complexType>
+						</xs:element>
+						<xs:element name="FunktionelFejlListe">
+							<xs:complexType>
+								<xs:sequence>
+									<xs:element name="FunktionelFejl" minOccurs="0" maxOccurs="99">
+										<xs:complexType>
+											<xs:sequence>
+												<xs:element ref="fase2.1:FunktionelFejlType"/>
+												<xs:element ref="fase2.1:FunktionelFejlPointer"/>
+												<xs:element ref="fase2.1:FunktionelFejlBegrundelse"/>
+												<xs:element ref="fase2.1:FunktionelFejlOprindeligAttributVærdi" minOccurs="0"/>
+											</xs:sequence>
+										</xs:complexType>
+									</xs:element>
+								</xs:sequence>
+							</xs:complexType>
+						</xs:element>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>

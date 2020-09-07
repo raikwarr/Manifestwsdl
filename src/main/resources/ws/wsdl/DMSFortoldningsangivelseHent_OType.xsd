@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0"
+	xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+	xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	<xs:annotation>
+		<xs:documentation/>
+		<xs:documentation>r5905</xs:documentation>
+	</xs:annotation>
+	<xs:include schemaLocation="KontekstType.xsd"/>
+	<xs:include schemaLocation="IEI79DMSImportDeklarationSoegSvarType.xsd"/>
+	<xs:element name="FortoldningsangivelseHent_O">
+		<xs:complexType>
+			<xs:complexContent>
+				<xs:extension base="fase2.1:FortoldningsangivelseHent_OType">
+					<xs:attribute name="revision">
+						<xs:simpleType>
+							<xs:restriction base="xs:string">
+								<xs:pattern value="r5905"/>
+							</xs:restriction>
+						</xs:simpleType>
+					</xs:attribute>
+				</xs:extension>
+			</xs:complexContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:complexType name="FortoldningsangivelseHent_OType">
+		<xs:sequence>
+			<xs:element ref="fase2.1:Kontekst"/>
+			<!--Sequence removed-->
+			<xs:element name="IEStrukturValg" minOccurs="0">
+				<xs:complexType>
+					<xs:choice>
+						<xs:element ref="fase2.1:IEI79AImportDeklarationSøgSvar"/>
+					</xs:choice>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>

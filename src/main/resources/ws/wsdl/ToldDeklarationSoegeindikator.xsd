@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/" elementFormDefault="qualified" version="1.0"
+	xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+	xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	<xs:include schemaLocation="TalHel2Type.xsd"/>
+	<xs:element name="ToldDeklarationSøgeindikator" type="fase2.1:TalHel2Type">
+		<xs:annotation>
+			<xs:documentation>Transient element der bliver benyttet at angive hvilke kriterier der skal søges på i forbindelse med udsøgning af tolddokumenter i importsystemet.</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+</xs:schema>

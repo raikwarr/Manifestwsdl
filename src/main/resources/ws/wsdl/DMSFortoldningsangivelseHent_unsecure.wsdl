@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WL5G3N0:definitions name="FortoldningsangivelseHentService" targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/" xmlns:WL5G3N0="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/">
+  <xs:annotation xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:documentation>Henter en fortoldningsangivelse baseret på et reference nummer </xs:documentation>
+  </xs:annotation>
+  <WL5G3N0:types>
+    <xsd:schema targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/">
+      <xsd:include schemaLocation="DMSFortoldningsangivelseHentInterface.xsd"/>
+    </xsd:schema>
+  </WL5G3N0:types>
+  <WL5G3N0:message name="FortoldningsangivelseHentServiceRequest">
+    <WL5G3N0:part name="Request" element="fase2.1:FortoldningsangivelseHent_I"/>
+  </WL5G3N0:message>
+  <WL5G3N0:message name="FortoldningsangivelseHentServiceResponse">
+    <WL5G3N0:part name="Response" element="fase2.1:FortoldningsangivelseHent_O"/>
+  </WL5G3N0:message>
+  <WL5G3N0:message name="KompenserTransRequest">
+    <WL5G3N0:part name="Request" element="fase2.1:KompenserTrans"/>
+  </WL5G3N0:message>
+  <WL5G3N0:message name="KompenserTransResponse">
+    <WL5G3N0:part name="Response" element="fase2.1:KompenserTransSvar"/>
+  </WL5G3N0:message>
+  <WL5G3N0:portType name="FortoldningsangivelseHentServicePortType">
+    <WL5G3N0:operation name="getFortoldningsangivelseHent">
+      <WL5G3N0:input message="fase2.1:FortoldningsangivelseHentServiceRequest"/>
+      <WL5G3N0:output message="fase2.1:FortoldningsangivelseHentServiceResponse"/>
+    </WL5G3N0:operation>
+    <WL5G3N0:operation name="getKompenserTrans">
+      <WL5G3N0:input message="fase2.1:KompenserTransRequest"/>
+      <WL5G3N0:output message="fase2.1:KompenserTransResponse"/>
+    </WL5G3N0:operation>
+  </WL5G3N0:portType>
+  <WL5G3N0:binding name="FortoldningsangivelseHentServicePortBinding" type="fase2.1:FortoldningsangivelseHentServicePortType">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
+    <WL5G3N0:operation name="getFortoldningsangivelseHent">
+      <soap:operation/>
+      <WL5G3N0:input>
+        <soap:body use="literal"/>
+      </WL5G3N0:input>
+      <WL5G3N0:output>
+        <soap:body use="literal"/>
+      </WL5G3N0:output>
+    </WL5G3N0:operation>
+    <WL5G3N0:operation name="getKompenserTrans">
+      <soap:operation/>
+      <WL5G3N0:input>
+        <soap:body use="literal"/>
+      </WL5G3N0:input>
+      <WL5G3N0:output>
+        <soap:body use="literal"/>
+      </WL5G3N0:output>
+    </WL5G3N0:operation>
+  </WL5G3N0:binding>
+  <WL5G3N0:service name="FortoldningsangivelseHentService">
+    <WL5G3N0:documentation>OSB Service</WL5G3N0:documentation>
+    <WL5G3N0:port name="FortoldningsangivelseHentServicePortType" binding="fase2.1:FortoldningsangivelseHentServicePortBinding">
+      <soap:address location="http://sktudv02esb01:8011/DMS/FortoldningsangivelseHent"/>
+    </WL5G3N0:port>
+  </WL5G3N0:service>
+</WL5G3N0:definitions>

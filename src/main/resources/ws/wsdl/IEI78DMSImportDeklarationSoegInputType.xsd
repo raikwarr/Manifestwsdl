@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0"
+	xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+	xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	<xs:annotation>
+		<xs:documentation/>
+		<xs:documentation>r5952</xs:documentation>
+	</xs:annotation>
+	<xs:include schemaLocation="DMSToldDeklaration.xsd"/>
+	<xs:include schemaLocation="ToldDeklarationSoegeindikator.xsd"/>
+	<xs:include schemaLocation="Transportmiddel.xsd"/>
+	<xs:include schemaLocation="TransportDokument.xsd"/>
+	<xs:include schemaLocation="Container.xsd"/>
+	<xs:element name="IEI78AImportDeklarationSøgInput" type="fase2.1:IEI78AImportDeklarationSøgInputType"/>
+	<xs:complexType name="IEI78AImportDeklarationSøgInputType">
+		<xs:sequence>
+			<xs:element name="IEI78A">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="TransportOperationNøgle">
+							<xs:complexType>
+								<xs:sequence>
+									<xs:element ref="fase2.1:ToldDeklarationStatusKode" minOccurs="0"/>
+									<xs:element ref="fase2.1:ToldDeklarationSøgeindikator"/>
+									<!--Sequence removed-->
+									<xs:element name="RegistreretFra" minOccurs="0">
+										<xs:complexType>
+											<xs:sequence>
+												<xs:element ref="fase2.1:ToldDeklarationRegistreretDatoTid"/>
+											</xs:sequence>
+										</xs:complexType>
+									</xs:element>
+									<!--Sequence removed-->
+									<xs:element name="RegistreretTil" minOccurs="0">
+										<xs:complexType>
+											<xs:sequence>
+												<xs:element ref="fase2.1:ToldDeklarationRegistreretDatoTid"/>
+											</xs:sequence>
+										</xs:complexType>
+									</xs:element>
+									<xs:element ref="fase2.1:TransportmiddelIdentitet" minOccurs="0"/>
+									<xs:element name="TransportDokumentListe">
+										<xs:complexType>
+											<xs:sequence>
+												<xs:element name="TransportDokument" minOccurs="0" maxOccurs="9999">
+													<xs:complexType>
+														<xs:sequence>
+															<xs:element ref="fase2.1:TransportDokumentType" minOccurs="0"/>
+															<xs:element ref="fase2.1:TransportDokumentReference" minOccurs="0"/>
+															<xs:element name="ImportReferenceListe">
+																<xs:complexType>
+																	<xs:sequence>
+																		<xs:element name="ImportReference" minOccurs="0" maxOccurs="99">
+																			<xs:complexType>
+																				<xs:sequence>
+																					<xs:element ref="fase2.1:ToldDeklarationReferenceNummer"/>
+																				</xs:sequence>
+																			</xs:complexType>
+																		</xs:element>
+																	</xs:sequence>
+																</xs:complexType>
+															</xs:element>
+															<xs:element name="ContainerListe">
+																<xs:complexType>
+																	<xs:sequence>
+																		<xs:element name="Container" minOccurs="0" maxOccurs="99">
+																			<xs:complexType>
+																				<xs:sequence>
+																					<xs:element ref="fase2.1:ContainerID"/>
+																				</xs:sequence>
+																			</xs:complexType>
+																		</xs:element>
+																	</xs:sequence>
+																</xs:complexType>
+															</xs:element>
+														</xs:sequence>
+													</xs:complexType>
+												</xs:element>
+											</xs:sequence>
+										</xs:complexType>
+									</xs:element>
+									<xs:element name="ImportReferenceListe">
+										<xs:complexType>
+											<xs:sequence>
+												<xs:element name="ImportReference" minOccurs="0" maxOccurs="99">
+													<xs:complexType>
+														<xs:sequence>
+															<xs:element ref="fase2.1:ToldDeklarationReferenceNummer"/>
+														</xs:sequence>
+													</xs:complexType>
+												</xs:element>
+											</xs:sequence>
+										</xs:complexType>
+									</xs:element>
+									<xs:element name="ContainerListe">
+										<xs:complexType>
+											<xs:sequence>
+												<xs:element name="Container" minOccurs="0" maxOccurs="99">
+													<xs:complexType>
+														<xs:sequence>
+															<xs:element ref="fase2.1:ContainerID"/>
+														</xs:sequence>
+													</xs:complexType>
+												</xs:element>
+											</xs:sequence>
+										</xs:complexType>
+									</xs:element>
+								</xs:sequence>
+							</xs:complexType>
+						</xs:element>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>
